@@ -1,4 +1,4 @@
-import Battery
+from new_design.Battery import Battery
 
 
 class SpindlerBattery(Battery):
@@ -7,7 +7,8 @@ class SpindlerBattery(Battery):
         self.current_date = _current_date
 
     def needs_service(self) -> bool:
-        if self.current_date - 2 >= self.last_service_date:
+        service_by = self.last_service_date.replace(self.last_service_date.year + 2)
+        if self.current_date >= service_by:
             return True
         else:
             return False

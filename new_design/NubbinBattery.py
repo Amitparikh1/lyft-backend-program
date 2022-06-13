@@ -1,4 +1,4 @@
-import Battery
+from new_design.Battery import Battery
 
 
 class NubbinBattery(Battery):
@@ -7,7 +7,8 @@ class NubbinBattery(Battery):
         self.current_date = _current_date
 
     def needs_service(self) -> bool:
-        if self.current_date - 4 >= self.last_service_date:
+        service_by = self.last_service_date.replace(self.last_service_date.year + 4)
+        if self.current_date >= service_by:
             return True
         else:
             return False

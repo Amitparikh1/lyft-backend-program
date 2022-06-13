@@ -1,4 +1,4 @@
-import Engine
+from new_design.Engine import Engine
 
 
 class SternmanEngine(Engine):
