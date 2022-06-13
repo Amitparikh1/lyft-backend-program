@@ -1,5 +1,7 @@
+from Serviceable import Serviceable
 
-class Car:
+
+class Car(Serviceable):
     def __init__(self, _engine, _battery):
         self.engine = _engine
         self.battery = _battery
