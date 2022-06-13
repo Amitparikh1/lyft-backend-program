@@ -8,13 +8,13 @@ from new_design.NubbinBattery import NubbinBattery
 class TestSpindler(unittest.TestCase):
     def test_battery_should_be_serviced(self):
         curr = datetime(2022, 6, 12)
-        last = datetime(2020, 1, 1)
+        last = datetime(2019, 1, 1)
         battery = SpindlerBattery(last, curr)
         self.assertTrue(battery.needs_service())
 
     def test_battery_should_not_be_serviced(self):
         curr = datetime(2022, 6, 12)
-        last = datetime(2021, 6, 12)
+        last = datetime(2020, 6, 12)
         battery = SpindlerBattery(last, curr)
         self.assertFalse(battery.needs_service())
 
